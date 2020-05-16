@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
             ),
             Image(
-              image: AssetImage("assets/schedule.png"),
+              image: AssetImage("assets/chord_app_logo.png"),
               width: 150,
               height: 150,
             ),
