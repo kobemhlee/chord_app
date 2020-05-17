@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
             ),
             Image(
-              image: AssetImage("assets/kalimba1.png"),
+              image: AssetImage("assets/chord_app_logo.png"),
               width: 120,
               height: 128,
             ),
