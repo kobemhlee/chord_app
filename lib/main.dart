@@ -70,15 +70,15 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
             ),
             Image(
-              image: AssetImage("assets/chord_app_logo.png"),
-              width: 150,
-              height: 150,
+              image: AssetImage("assets/kalimba1.png"),
+              width: 120,
+              height: 128,
             ),
             new SizedBox(
-              width: 180.0,
+              width: 150.0,
               //height: 100.0,
               child: new RaisedButton(
-                //onPressed: _goToScheduleScreen,
+                onPressed: _incrementCounter,
                 child: Text(
                     "Chord Library",
                     style: Theme.of(context).textTheme.title
@@ -89,12 +89,12 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             new SizedBox(
-              width: 180.0,
+              width: 150.0,
               //height: 100.0,
               child: new RaisedButton(
-                //onPressed: _goToAddItemsScreen,
+                onPressed: _incrementCounter,
                 child: Text(
-                    "Sequence Generator",
+                    "Progressions",
                     style: Theme.of(context).textTheme.title
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
@@ -103,24 +103,10 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             new SizedBox(
-              width: 180.0,
+              width: 150.0,
               //height: 100.0,
               child: new RaisedButton(
-                //onPressed: _goToRemoveItemsScreen,
-                child: Text(
-                    "Saved Sequences",
-                    style: Theme.of(context).textTheme.title
-                ),
-                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                color: Colors.white,
-                highlightColor: Colors.orangeAccent,
-              ),
-            ),
-            new SizedBox(
-              width: 180.0,
-              //height: 100.0,
-              child: new RaisedButton(
-                //onPressed: _goToSettingsScreen,
+                onPressed: _incrementCounter,
                 child: Text(
                     "Settings",
                     style: Theme.of(context).textTheme.title
