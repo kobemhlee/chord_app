@@ -55,8 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: Icon(
               Icons.home,
-
-              color: Colors.white,
+              color: Colors.brown[800],
             ),
           )],
       ),
@@ -70,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
                 'EZ Guitar',
                 style: TextStyle(
-                  fontFamily: 'Montserrat',
+                  fontFamily: 'Anton',
                   fontWeight: FontWeight.w500,
                   fontSize: 50, // 26
                   color: Colors.black,
@@ -88,7 +87,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _incrementCounter,
                 child: Text(
                     "Chord Library",
-                    style: Theme.of(context).textTheme.title
+                    //style: Theme.of(context).textTheme.title
+                    style: TextStyle(fontFamily: 'Anton')
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.white,
@@ -102,7 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _incrementCounter,
                 child: Text(
                     "Progressions",
-                    style: Theme.of(context).textTheme.title
+                    //style: Theme.of(context).textTheme.title
+                    style: TextStyle(fontFamily: 'Anton')
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.white,
@@ -116,7 +117,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onPressed: _incrementCounter,
                 child: Text(
                     "Settings",
-                    style: Theme.of(context).textTheme.title
+                    //style: Theme.of(context).textTheme.title
+                    style: TextStyle(fontFamily: 'Anton')
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.white,
