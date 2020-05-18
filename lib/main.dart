@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:chord_app/style.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,13 +29,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  AudioCache player = AudioCache();
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+    void _incrementCounter() {
+      setState(() {
+        player.load('assets/sample.mp3');
+        player.play('assets/sample.mp3');
+       });
+    }
+
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         //title: Text(widget.title, textAlign: TextAlign.center),
+        flexibleSpace: Image(
+          image: AssetImage('assets/wood.JPG'),
+          fit: BoxFit.cover,
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(
