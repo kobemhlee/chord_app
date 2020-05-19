@@ -37,7 +37,7 @@ class _ChordLibrary extends State<ChordLibrary> {
         ),
         body: PageView(
           children: <Widget>[
-            keyOfC(), keyOfD(), keyOfE(),
+            keyChooser()
           ],
         )
     );
@@ -45,10 +45,10 @@ class _ChordLibrary extends State<ChordLibrary> {
 }
 
 
-Widget keyOfC(){
+Widget keyChooser(){
   List<int> colorCodes = <int>[300, 100];
 
-  List<int> test = <int>[300, 100];
+  List<String> test = <String>["C", "C", "D", "E", "G", "A", "B"];
 
   return ListView.separated(
     scrollDirection: Axis.vertical,
@@ -61,7 +61,7 @@ Widget keyOfC(){
             height: 80,
             color: Colors.white70,
             child: Center(child: Text(
-                'Key of C',
+                'Pick a Key',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Montserrat',
@@ -88,87 +88,4 @@ Widget keyOfC(){
   );
 }
 
-Widget keyOfD(){
-  List<int> colorCodes = <int>[300, 100];
 
-  List<int> test2 = <int>[300, 100];
-
-  return ListView.separated(
-    scrollDirection: Axis.vertical,
-    shrinkWrap: true,
-    padding: const EdgeInsets.all(20),
-    itemCount: test2.length,
-    itemBuilder: (BuildContext context, int index) {
-      if (index == 0){
-        return Container(
-            height: 80,
-            color: Colors.white70,
-            child: Center(child: Text(
-                'Key of D',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 39, // 26
-                  color: Colors.black,
-                )
-            ),)
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-      }
-      else
-        return Container(
-            height: 80,
-            color: Colors.amber[colorCodes[index%2]],
-            child: InkWell(
-                child: Center(child: Text('Item $index: ${test2[index]}')))
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-    },
-    separatorBuilder: (BuildContext context, int index) => const Divider(),
-  );
-}
-
-Widget keyOfE(){
-  List<int> colorCodes = <int>[300, 100];
-  List<int> test2 = <int>[300, 100];
-
-  return ListView.separated(
-    scrollDirection: Axis.vertical,
-    shrinkWrap: true,
-    padding: const EdgeInsets.all(20),
-    itemCount: test2.length,
-    itemBuilder: (BuildContext context, int index) {
-      if (index == 0){
-        return Container(
-            height: 80,
-            color: Colors.white70,
-            child: Center(child: Text(
-                'Key of E',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 32, // 26
-                  color: Colors.black,
-                )
-            ),)
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-      }
-      else
-        return Container(
-            height: 80,
-            color: Colors.amber[colorCodes[index%2]],
-            child: InkWell(
-                child: Center(child: Text('Item $index: ${test2[index]}')))
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-    },
-    separatorBuilder: (BuildContext context, int index) => const Divider(),
-  );
-}
