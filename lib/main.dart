@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:chord_app/style.dart';
 import 'package:audioplayers/audio_cache.dart';
+import 'package:chord_app/chordlibpage.dart';
 
 void main() => runApp(MyApp());
 
@@ -31,12 +32,22 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   AudioCache player = AudioCache();
 
-    void _incrementCounter() {
-      setState(() {
-        player.load('assets/sample.mp3');
-        player.play('assets/sample.mp3');
-       });
-    }
+  void _incrementCounter() {
+    setState(() {
+      player.load('assets/sample.mp3');
+      player.play('assets/sample.mp3');
+    });
+  }
+
+  void _goToChordLibrary() {
+    setState(() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ChordLibrary(title: 'Key of C')),
+      );
+    });
+  }
+
 
 
   @override
@@ -69,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
                 'EZ Guitar',
                 style: TextStyle(
-                  fontFamily: 'Anton',
+                  fontFamily: 'Montserrat',
                   fontWeight: FontWeight.w500,
                   fontSize: 50, // 26
                   color: Colors.black,
@@ -84,11 +95,11 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 150.0,
               //height: 100.0,
               child: new RaisedButton(
-                onPressed: _incrementCounter,
+                onPressed: _goToChordLibrary,
                 child: Text(
                     "Chord Library",
                     //style: Theme.of(context).textTheme.title
-                    style: TextStyle(fontFamily: 'Anton')
+                    style: TextStyle(fontFamily: 'Montserrat')
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.white,
@@ -101,9 +112,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: new RaisedButton(
                 onPressed: _incrementCounter,
                 child: Text(
-                    "Progressions",
+                    "My Songs",
                     //style: Theme.of(context).textTheme.title
-                    style: TextStyle(fontFamily: 'Anton')
+                    style: TextStyle(fontFamily: 'Montserrat')
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.white,
@@ -116,9 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
               child: new RaisedButton(
                 onPressed: _incrementCounter,
                 child: Text(
-                    "Settings",
+                    "Ear Trainer",
                     //style: Theme.of(context).textTheme.title
-                    style: TextStyle(fontFamily: 'Anton')
+                    style: TextStyle(fontFamily: 'Montserrat')
                 ),
                 shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.white,
