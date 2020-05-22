@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:chord_app/createpage.dart';
 
 class MySongs extends StatefulWidget {
   MySongs({Key key, this.title}) : super(key: key);
@@ -12,9 +13,17 @@ class MySongs extends StatefulWidget {
 
 class _MySongs extends State<MySongs> {
 
+  void _goToCreateSongs() {
+    setState(() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => CreateSongs(title: 'Create Songs')),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-
 
     return Scaffold(
         backgroundColor: Colors.cyan[100],
@@ -30,62 +39,37 @@ class _MySongs extends State<MySongs> {
           actions: <Widget>[
             IconButton(
               icon: Icon(
-                Icons.vpn_key,
+                Icons.audiotrack,
                 color: Colors.brown,
               ),
             )],
         ),
-        body: PageView(
+      body: Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            keyChooser()
+            new SizedBox(
+              width: 100.0,
+              //height: 100.0,
+              child: new RaisedButton(
+                onPressed: _goToCreateSongs,
+                child: Text(
+                    "Create",
+                    //style: Theme.of(context).textTheme.title
+                    style: TextStyle(fontFamily: 'Montserrat')
+                ),
+                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                color: Colors.white,
+                highlightColor: Colors.orangeAccent,
+              ),
+            ),
           ],
-        )
+        ),
+      ),
     );
   }
 }
-
-
-Widget keyChooser(){
-  List<int> colorCodes = <int>[300, 100];
-
-  List<String> test = <String>["C", "C", "D", "E", "G", "A", "B"];
-
-  return ListView.separated(
-    scrollDirection: Axis.vertical,
-    shrinkWrap: true,
-    padding: const EdgeInsets.all(20),
-    itemCount: test.length,
-    itemBuilder: (BuildContext context, int index) {
-      if (index == 0){
-        return Container(
-            height: 80,
-            color: Colors.white70,
-            child: Center(child: Text(
-                'Pick a Key',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 39, // 26
-                  color: Colors.black,
-                )
-            ),)
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-      }
-      else
-        return Container(
-            height: 80,
-            color: Colors.amber[colorCodes[index%2]],
-            child: InkWell(
-                child: Center(child: Text('Item $index: ${test[index]}')))
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-    },
-    separatorBuilder: (BuildContext context, int index) => const Divider(),
-  );
-}
-
 
