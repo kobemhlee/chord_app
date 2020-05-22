@@ -11,8 +11,7 @@ class CreateSongs extends StatefulWidget {
 }
 
 class _CreateSongs extends State<CreateSongs> {
-  String dropdownValue = 'Verse';
-
+  String _value = 'Verse';
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +34,31 @@ class _CreateSongs extends State<CreateSongs> {
               color: Colors.brown,
             ),
           )],
+        title: new Theme(
+          child: new DropdownButtonHideUnderline(
+            child: new DropdownButton<String>(
+              value: _value,
+              items: <DropdownMenuItem<String>>[
+                new DropdownMenuItem(
+                  child: new Text('Verse'),
+                  value: 'Verse',
+                ),
+                new DropdownMenuItem(
+                  child: new Text('Chorus'),
+                  value: 'Chorus',
+                ),
+                new DropdownMenuItem(
+                  child: new Text('Bridge'),
+                  value: 'Bridge',
+                ),
+              ],
+              onChanged: (String value) {
+                setState(() => _value = value);
+              },
+            ),
+          ),
+          data: new ThemeData.dark()
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -43,15 +67,17 @@ class _CreateSongs extends State<CreateSongs> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            new DropdownButton<String>(
-              items: <String>['Verse', 'Chorus', 'Bridge'].map((String value) {
-                return new DropdownMenuItem<String>(
-                  value: value,
-                  child: new Text(value),
-                );
-              }).toList(),
-              onChanged: (_) {},
-            )
+//            new DropdownButton<String>(
+//              value: _value,
+//              items: <String>['Verse', 'Chorus', 'Bridge'].map((String _value) {
+//                return new DropdownMenuItem<String>(
+//                    child: new DropdownMenuItem(child: new Text('Add'))
+//                );
+//              }).toList(),
+//              onChanged: (String value) {
+//                setState(() => _value = value);
+//              },
+//            )
           ],
         ),
       ),
