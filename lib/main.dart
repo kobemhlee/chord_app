@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chord_app/style.dart';
 import 'package:audioplayers/audio_cache.dart';
 import 'package:chord_app/chordlibpage.dart';
+import 'package:chord_app/mysongspage.dart';
 
 void main() => runApp(MyApp());
 
@@ -47,6 +48,16 @@ class _MyHomePageState extends State<MyHomePage> {
       );
     });
   }
+
+  void _goToMySongs() {
+    setState(() {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MySongs(title: 'My Songs')),
+      );
+    });
+  }
+
 
 
 
@@ -110,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
               width: 150.0,
               //height: 100.0,
               child: new RaisedButton(
-                onPressed: _incrementCounter,
+                onPressed: _goToMySongs,
                 child: Text(
                     "My Songs",
                     //style: Theme.of(context).textTheme.title
