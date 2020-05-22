@@ -48,7 +48,7 @@ class _ChordLibrary extends State<ChordLibrary> {
 Widget keyChooser(){
   List<int> colorCodes = <int>[300, 100];
 
-  List<String> test = <String>["C", "C", "D", "E", "G", "A", "B"];
+  List<String> test = <String>["C", "D", "E", "G", "A", "B"];
 
   return ListView.separated(
     scrollDirection: Axis.vertical,
@@ -56,12 +56,11 @@ Widget keyChooser(){
     padding: const EdgeInsets.all(20),
     itemCount: test.length,
     itemBuilder: (BuildContext context, int index) {
-      if (index == 0){
         return Container(
             height: 80,
             color: Colors.white70,
             child: Center(child: Text(
-                'Pick a Key',
+                'Key of ${test[index]}',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontFamily: 'Montserrat',
@@ -70,18 +69,6 @@ Widget keyChooser(){
                   color: Colors.black,
                 )
             ),)
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
-        );
-      }
-      else
-        return Container(
-            height: 80,
-            color: Colors.amber[colorCodes[index%2]],
-            child: InkWell(
-                child: Center(child: Text('Item $index: ${test[index]}')))
-          //Text('Item $index: ${mondayEvents[index]}')),
-          //Center(child: Text('Item $index: ${mondayEvents[index]}')),
         );
     },
     separatorBuilder: (BuildContext context, int index) => const Divider(),
