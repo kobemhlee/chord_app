@@ -24,6 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   audioplayers: ^0.7.8
+  getflutter: ^1.0.11
 
 dev_dependencies:
   flutter_test:
@@ -54,6 +55,7 @@ flutter:
     - assets/orange.png
     - assets/wood.JPG
     - assets/sample.mp3
+    - assets/picktest.png
 
 
 
