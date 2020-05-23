@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:getflutter/getflutter.dart';
 
 class ChordLibrary extends StatefulWidget {
   ChordLibrary({Key key, this.title}) : super(key: key);
@@ -35,11 +36,70 @@ class _ChordLibrary extends State<ChordLibrary> {
               ),
             )],
         ),
-        body: PageView(
-          children: <Widget>[
-            keyChooser()
-          ],
-        )
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              //Image(
+               // image: AssetImage("assets/picktest.png"),
+               // width: 120,
+               // height: 128,
+              //),
+              GFButton(
+                onPressed: (){},
+                text: "C",
+                  textStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+                shape: GFButtonShape.pills,
+                color: Colors.white,
+                icon: Icon(Icons.vpn_key),
+              ),
+              GFButton(
+                  onPressed: (){},
+                  text: "D",
+                  textStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+                  shape: GFButtonShape.pills,
+                  color: Colors.white,
+                  icon: Icon(Icons.vpn_key),
+              ),
+              GFButton(
+                  onPressed: (){},
+                  text: "E",
+                  textStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+                  shape: GFButtonShape.pills,
+                  color: Colors.white,
+                  icon: Icon(Icons.vpn_key),
+
+              ),
+              GFButton(
+                  onPressed: (){},
+                  text: "G",
+                  textStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+                  shape: GFButtonShape.pills,
+                  color: Colors.white,
+                  icon: Icon(Icons.vpn_key),
+              ),
+              GFButton(
+                  onPressed: (){},
+                  text: "A",
+                  textStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+                  shape: GFButtonShape.pills,
+                  color: Colors.white,
+                  icon: Icon(Icons.vpn_key),
+              ),
+              GFButton(
+                  onPressed: (){},
+                  text: "B",
+                  textStyle: TextStyle(fontWeight: FontWeight.w500, color: Colors.black87),
+                  shape: GFButtonShape.pills,
+                  color: Colors.white,
+                  icon: Icon(Icons.vpn_key),
+              ),
+            ],
+          ),
+        ),
     );
   }
 }
@@ -74,5 +134,6 @@ Widget keyChooser(){
     separatorBuilder: (BuildContext context, int index) => const Divider(),
   );
 }
+
 
 
