@@ -28,6 +28,7 @@ class _ChordLibrary extends State<ChordLibrary> {
             image: AssetImage('assets/wood.JPG'),
             fit: BoxFit.cover,
           ),
+          
           actions: <Widget>[
             IconButton(
               icon: Icon(
