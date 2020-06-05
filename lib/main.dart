@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:chord_app/nestedTabBarView.dart';
+import 'package:chord_app/mysongspage.dart';
 
 void main() => runApp(MyApp());
 
@@ -85,9 +86,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           Center(
             child: Text("Ear Trainer Page Goes Here"),
           ),
-          Center(
-            child: Text("Song Creator Page Goes Here"),
-          )
+
+          MySongs()
         ],
         controller: _tabController,
       ),

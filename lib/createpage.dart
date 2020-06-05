@@ -17,7 +17,7 @@ class _CreateSongs extends State<CreateSongs> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      backgroundColor: Colors.cyan[100],
+      backgroundColor: Colors.black87,
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
@@ -31,57 +31,38 @@ class _CreateSongs extends State<CreateSongs> {
           IconButton(
             icon: Icon(
               Icons.audiotrack,
-              color: Colors.brown,
+              color: Colors.black87,
             ),
           )],
         title: new Theme(
-          child: new DropdownButtonHideUnderline(
-            child: new DropdownButton<String>(
-              value: _value,
-              items: <DropdownMenuItem<String>>[
-                new DropdownMenuItem(
-                  child: new Text('Verse'),
-                  value: 'Verse',
-                ),
-                new DropdownMenuItem(
-                  child: new Text('Chorus'),
-                  value: 'Chorus',
-                ),
-                new DropdownMenuItem(
-                  child: new Text('Bridge'),
-                  value: 'Bridge',
-                ),
-              ],
-              onChanged: (String value) {
-                setState(() => _value = value);
-              },
+            child: new DropdownButtonHideUnderline(
+              child: new DropdownButton<String>(
+                value: _value,
+                items: <DropdownMenuItem<String>>[
+                  new DropdownMenuItem(
+                    child: new Text('Verse'),
+                    value: 'Verse',
+                  ),
+                  new DropdownMenuItem(
+                    child: new Text('Chorus'),
+                    value: 'Chorus',
+                  ),
+                  new DropdownMenuItem(
+                    child: new Text('Bridge'),
+                    value: 'Bridge',
+                  ),
+                ],
+                onChanged: (String value) {
+                  setState(() => _value = value);
+                },
+              ),
             ),
-          ),
-          data: new ThemeData.dark()
+            data: new ThemeData.dark()
         ),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: <Widget>[
-//            new DropdownButton<String>(
-//              value: _value,
-//              items: <String>['Verse', 'Chorus', 'Bridge'].map((String _value) {
-//                return new DropdownMenuItem<String>(
-//                    child: new DropdownMenuItem(child: new Text('Add'))
-//                );
-//              }).toList(),
-//              onChanged: (String value) {
-//                setState(() => _value = value);
-//              },
-//            )
-          ],
-        ),
+
       ),
     );
   }
 }
-

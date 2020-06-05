@@ -24,48 +24,30 @@ class _MySongs extends State<MySongs> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-        backgroundColor: Colors.cyan[100],
+        backgroundColor: Colors.black87,
         resizeToAvoidBottomPadding: false,
-        appBar: AppBar(
-          // Here we take the value from the MyHomePage object that was created by
-          // the App.build method, and use it to set our appbar title.
-          //title: Text(widget.title, textAlign: TextAlign.center),
-          flexibleSpace: Image(
-            image: AssetImage('assets/wood.JPG'),
-            fit: BoxFit.cover,
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.audiotrack,
-                color: Colors.brown,
-              ),
-            )],
-        ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.end,
+          //mainAxisAlignment: MainAxisAlignment.end,
+          //crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new SizedBox(
-              width: 100.0,
-              //height: 100.0,
-              child: new RaisedButton(
-                onPressed: _goToCreateSongs,
-                child: Text(
-                    "Create",
-                    //style: Theme.of(context).textTheme.title
-                    style: TextStyle(fontFamily: 'Montserrat')
+            Container(
+              margin: EdgeInsets.only(top: 450, right: MediaQuery.of(context).size.width*0.7),
+              width: 70,
+              height: 70,
+              child: FloatingActionButton(
+                child: Icon(
+                    Icons.add,
+                    color: Colors.black87,
+                    size: 65,
                 ),
-                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-                color: Colors.white,
-                highlightColor: Colors.orangeAccent,
+                backgroundColor: Colors.orange,
+                onPressed: _goToCreateSongs,
               ),
-            ),
+            )
           ],
         ),
       ),
