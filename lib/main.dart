@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.brown[800],
+              color: Colors.black87,
             ),
           )
         ],
