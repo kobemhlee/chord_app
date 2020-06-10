@@ -34,31 +34,31 @@ class _MySongs extends State<MySongs> {
               scrollDirection: Axis.horizontal,
               children: <Widget>[
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('C')
                 ),
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('D'),
                 ),
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('E'),
                 ),
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('F'),
                 ),
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('G'),
                 ),
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('A'),
                 ),
                 SimpleDialogOption(
-                  onPressed: () {},
+                  onPressed: _goToCreateSongs,
                   child: const Text('B'),
                 ),
               ]
@@ -91,7 +91,6 @@ class _MySongs extends State<MySongs> {
                     size: 65,
                 ),
                 backgroundColor: Colors.orange,
-                //onPressed: _goToCreateSongs,
                 onPressed: () {
                   createKeySelect(context);
                 },
