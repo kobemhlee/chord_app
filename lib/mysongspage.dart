@@ -22,6 +22,45 @@ class _MySongs extends State<MySongs> {
     });
   }
 
+  createKeySelect(BuildContext context) {
+    return showDialog(context: context,builder: (context) {
+      return SimpleDialog(
+        //backgroundColor: Colors.orange,
+        title: const Text('Select key'),
+        children: <Widget>[
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('C'),
+          ),
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('D'),
+          ),
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('E'),
+          ),
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('F'),
+          ),
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('G'),
+          ),
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('A'),
+          ),
+          SimpleDialogOption(
+            onPressed: () {},
+            child: const Text('B'),
+          ),
+        ],
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +84,10 @@ class _MySongs extends State<MySongs> {
                     size: 65,
                 ),
                 backgroundColor: Colors.orange,
-                onPressed: _goToCreateSongs,
+                //onPressed: _goToCreateSongs,
+                onPressed: () {
+                  createKeySelect(context);
+                },
               ),
             )
           ],
