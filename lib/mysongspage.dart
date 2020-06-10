@@ -24,39 +24,46 @@ class _MySongs extends State<MySongs> {
 
   createKeySelect(BuildContext context) {
     return showDialog(context: context,builder: (context) {
-      return SimpleDialog(
+      return AlertDialog(
         //backgroundColor: Colors.orange,
         title: const Text('Select key'),
-        children: <Widget>[
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('C'),
+        content: Container(
+          width: 250,
+          height: 75,
+          child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: <Widget>[
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('C')
+                ),
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('D'),
+                ),
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('E'),
+                ),
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('F'),
+                ),
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('G'),
+                ),
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('A'),
+                ),
+                SimpleDialogOption(
+                  onPressed: () {},
+                  child: const Text('B'),
+                ),
+              ]
           ),
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('D'),
-          ),
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('E'),
-          ),
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('F'),
-          ),
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('G'),
-          ),
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('A'),
-          ),
-          SimpleDialogOption(
-            onPressed: () {},
-            child: const Text('B'),
-          ),
-        ],
+        ),
       );
     });
   }
