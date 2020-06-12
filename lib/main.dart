@@ -54,6 +54,24 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                   children: [
                     new Container(
                       color: Color(0xff212128),
+                      child: ListView(
+                        padding: EdgeInsets.all(20.0),
+                        children: [
+                          Text( " ", textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 28
+                              )),
+                          Text( "i", textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 41
+                              )),
+
+                        ]
+                      )
                     ),
                     new Container(
                       color: Colors.orange,
