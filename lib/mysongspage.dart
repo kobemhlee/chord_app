@@ -115,6 +115,7 @@ class _MySongs extends State<MySongs> {
             Container(
                 margin: EdgeInsets.only(top: 75.0),
                 child: ListView.builder(
+                    padding: EdgeInsets.only(left: 10, right: 10),
                     itemCount: songs.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
