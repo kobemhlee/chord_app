@@ -112,9 +112,10 @@ class _MySongs extends State<MySongs> {
         // in the middle of the parent.
         child: Stack(
           children: <Widget>[
-            Expanded(
+            Container(
+                margin: EdgeInsets.only(top: 80.0),
                 child: ListView.builder(
-                    padding: EdgeInsets.only(top: 90.0),
+                    //padding: EdgeInsets.only(top: 90.0),
                     itemCount: songs.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
