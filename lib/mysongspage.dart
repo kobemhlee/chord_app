@@ -113,9 +113,9 @@ class _MySongs extends State<MySongs> {
         child: Stack(
           children: <Widget>[
             Container(
-                margin: EdgeInsets.only(top: 80.0),
+                margin: EdgeInsets.only(top: 75.0),
                 child: ListView.builder(
-                    //padding: EdgeInsets.only(top: 90.0),
+                    padding: EdgeInsets.only(left: 10, right: 10),
                     itemCount: songs.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
@@ -134,6 +134,7 @@ class _MySongs extends State<MySongs> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
+                style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   filterSearchResults(value);
                 },
