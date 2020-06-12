@@ -63,13 +63,100 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                   fontWeight: FontWeight.w600,
                                   fontSize: 28
                               )),
-                          Text( "i", textAlign: TextAlign.left,
+                          Text( " i", textAlign: TextAlign.left,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 41
                               )),
-
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 20.0),
+                            height: 300.0,
+                            child: ListView(
+                              scrollDirection: Axis.horizontal,
+                              children: <Widget>[
+                                Container(
+                                  width: 180.0,
+                                  color: Color(0xff212128),
+                                  child: ListView(
+                                    padding: EdgeInsets.all(18),
+                                    children: [
+                                      Image(
+                                        image: AssetImage("assets/test.png"),
+                                        width: 180,
+                                        height: 188,
+                                        alignment: Alignment.centerLeft,
+                                      ),
+                                      Text( "chord: G\ndifficult: 1", textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.w500,
+                                              fontSize: 28
+                                          )),
+                                    ]
+                                  ),
+                                ),
+                                Container(
+                                  width: 180.0,
+                                  color: Color(0xff212128),
+                                  child: ListView(
+                                      padding: EdgeInsets.all(18),
+                                      children: [
+                                        Image(
+                                          image: AssetImage("assets/test.png"),
+                                          width: 180,
+                                          height: 188,
+                                          alignment: Alignment.centerLeft,
+                                        ),
+                                        Text( "chord: G\ndifficult: 1", textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 28
+                                            )),
+                                      ]
+                                  ),
+                                ),
+                                Container(
+                                  width: 180.0,
+                                  color: Color(0xff212128),
+                                  child: ListView(
+                                      padding: EdgeInsets.all(18),
+                                      children: [
+                                        Image(
+                                          image: AssetImage("assets/test.png"),
+                                          width: 180,
+                                          height: 188,
+                                          alignment: Alignment.centerLeft,
+                                        ),
+                                        Text( "chord: G\ndifficult: 1", textAlign: TextAlign.left,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize: 28
+                                            )),
+                                      ]
+                                  ),
+                                ),
+                                Container(
+                                  width: 160.0,
+                                  color: Colors.blue,
+                                ),
+                                Container(
+                                  width: 160.0,
+                                  color: Colors.green,
+                                ),
+                                Container(
+                                  width: 160.0,
+                                  color: Colors.yellow,
+                                ),
+                                Container(
+                                  width: 160.0,
+                                  color: Colors.orange,
+                                ),
+                              ],
+                            ),
+                          )
                         ]
                       )
                     ),
