@@ -13,7 +13,7 @@ class MySongs extends StatefulWidget {
 
 class _MySongs extends State<MySongs> {
 
-  final List<String> duplicateItems = ['song1', 'song2', 'song3', 'song4', 'song5'];
+  final duplicateItems = List<String>.generate(20, (i) => "Song $i");
   var songs = List<String>();
 
   @override
