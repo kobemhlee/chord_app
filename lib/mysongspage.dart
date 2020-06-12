@@ -13,6 +13,17 @@ class MySongs extends StatefulWidget {
 
 class _MySongs extends State<MySongs> {
 
+  final List<String> duplicateItems = ['song1', 'song2', 'song3', 'song4', 'song5'];
+  var songs = List<String>();
+
+  @override
+  void initState() {
+    songs.addAll(duplicateItems);
+    super.initState();
+  }
+
+  TextEditingController editingController = TextEditingController();
+
   void _goToCreateSongs() {
     setState(() {
       Navigator.push(
@@ -20,6 +31,29 @@ class _MySongs extends State<MySongs> {
         MaterialPageRoute(builder: (context) => CreateSongs(title: 'Create Songs')),
       );
     });
+  }
+
+  void filterSearchResults(String query) {
+    List<String> dummySearchList = List<String>();
+    dummySearchList.addAll(duplicateItems);
+    if(query.isNotEmpty) {
+      List<String> dummyListData = List<String>();
+      dummySearchList.forEach((item) {
+        if(item.contains(query)) {
+          dummyListData.add(item);
+        }
+      });
+      setState(() {
+        songs.clear();
+        songs.addAll(dummyListData);
+      });
+      return;
+    } else {
+      setState(() {
+        songs.clear();
+        songs.addAll(duplicateItems);
+      });
+    }
   }
 
   createKeySelect(BuildContext context) {
@@ -76,19 +110,61 @@ class _MySongs extends State<MySongs> {
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.end,
-          //crossAxisAlignment: CrossAxisAlignment.start,
+        child: Stack(
           children: <Widget>[
+            Expanded(
+                child: ListView.builder(
+                    padding: EdgeInsets.only(top: 90.0),
+                    itemCount: songs.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        height: 50,
+                        margin: EdgeInsets.all(2),
+                        color: Colors.blue[400],
+                        child: Center(
+                            child: Text('${songs[index]}',
+                              style: TextStyle(fontSize: 18),
+                            )
+                        ),
+                      );
+                    }
+                )
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                onChanged: (value) {
+                  filterSearchResults(value);
+                },
+                controller: editingController,
+                decoration: InputDecoration(
+                    labelStyle: TextStyle(color: Colors.white),
+                    labelText: "Search",
+                    hintText: "Search",
+                    prefixIcon: Icon(
+                        Icons.search,
+                        color: Colors.white,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(25.0))
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.teal),
+                        borderRadius: BorderRadius.all(Radius.circular(25.0))
+                    )
+                ),
+              ),
+            ),
             Container(
               margin: EdgeInsets.only(top: 450, right: MediaQuery.of(context).size.width*0.7),
-              width: 70,
-              height: 70,
+              width: 80,
+              height: 80,
               child: FloatingActionButton(
                 child: Icon(
-                    Icons.add,
-                    color: Colors.black87,
-                    size: 65,
+                  Icons.add,
+                  color: Colors.black87,
+                  size: 80,
                 ),
                 backgroundColor: Colors.orange,
                 onPressed: () {

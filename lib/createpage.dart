@@ -30,7 +30,13 @@ class _CreateSongs extends State<CreateSongs> {
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.audiotrack,
+              Icons.edit,
+              color: Colors.black87,
+            ),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.save_alt,
               color: Colors.black87,
             ),
           )],
