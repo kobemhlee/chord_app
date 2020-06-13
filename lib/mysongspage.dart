@@ -105,7 +105,7 @@ class _MySongs extends State<MySongs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black87,
+        backgroundColor: Color(0xff212128),
         resizeToAvoidBottomPadding: false,
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -119,18 +119,29 @@ class _MySongs extends State<MySongs> {
                     itemCount: songs.length,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
-                        height: 50,
-                        margin: EdgeInsets.all(2),
-                        color: Colors.blue[400],
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xff212128),
+                          border: Border.all(color: Color(0xffA2A2A7)),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(17),
+                            bottomRight: Radius.circular(17),
+                            topRight: Radius.circular(17),
+                            topLeft: Radius.circular(17),
+                          ),
+                        ),
+                        margin: EdgeInsets.all(6),
+                        //color: Color(0xffF0BD74),
                         child: Center(
                             child: Text('${songs[index]}',
-                              style: TextStyle(fontSize: 18),
+                              style: TextStyle(fontSize: 18, color: Color(0xffA2A2A7)),
                             )
                         ),
                       );
                     }
                 )
             ),
+
             Padding(
               padding: const EdgeInsets.only(top: 35, left: 8, right: 8),
               child: TextField(

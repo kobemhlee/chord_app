@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                                         height: 188,
                                         alignment: Alignment.centerLeft,
                                       ),
-                                      Text( "chord: G\ndifficult: 1", textAlign: TextAlign.left,
+                                      Text( "chord: G\ndifficulty: 1", textAlign: TextAlign.left,
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.w500,
