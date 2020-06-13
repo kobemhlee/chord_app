@@ -159,7 +159,7 @@ class _MySongs extends State<MySongs> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 450, right: MediaQuery.of(context).size.width*0.7),
+              margin: EdgeInsets.only(top: MediaQuery.of(context).size.width*1.05, right: MediaQuery.of(context).size.width*0.7),
               width: 80,
               height: 80,
               child: FloatingActionButton(
