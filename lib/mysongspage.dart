@@ -113,7 +113,7 @@ class _MySongs extends State<MySongs> {
         child: Stack(
           children: <Widget>[
             Container(
-                margin: EdgeInsets.only(top: 75.0),
+                margin: EdgeInsets.only(top: 102),
                 child: ListView.builder(
                     padding: EdgeInsets.only(left: 10, right: 10),
                     itemCount: songs.length,
@@ -132,7 +132,7 @@ class _MySongs extends State<MySongs> {
                 )
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 35, left: 8, right: 8),
               child: TextField(
                 style: TextStyle(color: Colors.white),
                 onChanged: (value) {
