@@ -39,7 +39,7 @@ class _MySongs extends State<MySongs> {
     if(query.isNotEmpty) {
       List<String> dummyListData = List<String>();
       dummySearchList.forEach((item) {
-        if(item.contains(query)) {
+        if(item.contains(query) || item.toLowerCase().contains(query)) {
           dummyListData.add(item);
         }
       });
